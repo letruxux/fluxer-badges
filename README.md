@@ -8,7 +8,7 @@
 
 ## how to use:
 
-Allowed styles:
+allowed styles:
 
 - flat
 - flat-square
