@@ -9,7 +9,7 @@ import {
   handleGuildMemberAdd,
   handleGuildMemberRemove,
 } from "./member-utils";
-import { ResponseSvg, imgBufferToBase64 } from "./utils";
+import { ResponseSvg, readLogo } from "./utils";
 
 const accentColor = "#4641D9";
 const lessAccentColor = "#3935b2";
@@ -50,12 +50,7 @@ new Elysia()
       labelColor: lessAccentColor,
       color: accentColor,
       style,
-      logoBase64: await fetch(
-        "https://raw.githubusercontent.com/fluxerapp/fluxer/refactor/fluxer_app/src/images/fluxer-logo-monochrome.svg",
-      )
-        .then((res) => res.text())
-        .then((res) => (style !== "social" ? res.replace("currentColor", "white") : res))
-        .then((a) => imgBufferToBase64(Buffer.from(a))),
+      logoBase64: await readLogo(style === "social" ? "black" : "white"),
     });
 
     return ResponseSvg(svg);

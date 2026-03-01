@@ -16,7 +16,12 @@ export async function fetchAllMembers(guild: Guild) {
 
 export function getMemberCount(guild: Guild) {
   const count = memberCountCache.get(guild.id);
-  if (count === undefined) return fetchAllMembers(guild);
+  if (count === undefined) {
+    return fetchAllMembers(guild).then((c) => {
+      memberCountCache.set(guild.id, c);
+      return c;
+    });
+  }
   return Promise.resolve(count);
 }
 
