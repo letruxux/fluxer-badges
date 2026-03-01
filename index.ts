@@ -45,7 +45,7 @@ new Elysia()
     const svg = makeBadge({
       label: guild.name,
       message: await getMemberCount(guild).then(
-        (count) => `${count.toLocaleString()} online`,
+        (count) => `${count.toLocaleString()} members`,
       ),
       labelColor: lessAccentColor,
       color: accentColor,
