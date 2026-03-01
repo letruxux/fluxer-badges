@@ -97,7 +97,7 @@ new Elysia()
         "https://raw.githubusercontent.com/fluxerapp/fluxer/refactor/fluxer_app/src/images/fluxer-logo-monochrome.svg",
       )
         .then((res) => res.text())
-        .then((res) => res.replace("currentColor", "white"))
+        .then((res) => (style !== "social" ? res.replace("currentColor", "white") : res))
         .then((a) => imgBufferToBase64(Buffer.from(a))),
     });
 
