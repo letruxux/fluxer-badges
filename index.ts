@@ -1,8 +1,8 @@
 import { makeBadge } from "badge-maker";
 import Elysia from "elysia";
-import { Client, Guild } from "@fluxerjs/core";
+import { Client, Events, Guild } from "@fluxerjs/core";
 import { env } from "./env";
-import z from "zod";
+import z, { ZodError } from "zod";
 
 function imgBufferToBase64(buffer: Buffer) {
   return "data:image/svg+xml;base64," + buffer.toString("base64");
@@ -67,6 +67,10 @@ async function getOrFetchGuild(id: string) {
 const styleSchema = z.enum(["flat", "flat-square", "plastic", "social", "for-the-badge"]);
 type Style = z.infer<typeof styleSchema>;
 
+client.on(Events.Error, (e) => {
+  console.error("fluxerjs error", e);
+});
+
 new Elysia()
   .get("/badge/:id", async (c) => {
     const style: Style = styleSchema.parse(c.query.style ?? "flat");
@@ -99,6 +103,17 @@ new Elysia()
 
     return ResponseSvg(svg);
   })
+  .onError(({ error }) => {
+    console.error(error);
+    return ResponseSvg(
+      makeBadge({
+        label: "error",
+        color: "red",
+        message: error instanceof ZodError ? "invalid args" : "unknown error",
+      }),
+    );
+  })
+  .get("/", (c) => c.redirect("https://github.com/letruxux/fluxer-badges/"))
   .listen(4005, async (server) => {
     console.log(`Listening on port ${server.port}`);
     await client.login(env.FLUXER_BOT_TOKEN);
