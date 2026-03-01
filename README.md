@@ -1,7 +1,7 @@
 # fluxer badges!
 
 > [!NOTE]
-> You need to [invite the bot](https://discord.com/api/oauth2/authorize?client_id=1028601674849203200&permissions=8&scope=bot) to your server to use this.
+> You need to [invite the bot](https://web.fluxer.app/oauth2/authorize?client_id=1477673661788864709&scope=bot&permissions=1024) to your server to use this.
 
 > [!NOTE]
 > The server won't respond if Fluxer is down. Check its status [here](https://fluxerstatus.com).
