@@ -1,5 +1,7 @@
 # fluxer badges!
 
+[![image](https://badges.fluxer.ltrx.lol/badge/1476277757476868234?style=for-the-badge)](https://fluxer.gg/Roi7rTTU)
+
 > [!NOTE]
 > You need to [invite the bot](https://web.fluxer.app/oauth2/authorize?client_id=1477673661788864709&scope=bot&permissions=1024) to your server to use this.
 
