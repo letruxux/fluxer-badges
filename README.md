@@ -18,23 +18,23 @@ allowed styles:
 
 `https://badges.fluxer.ltrx.lol/badge/0000000000000000000?style=flat`
 
-![image](https://badges.fluxer.ltrx.lol/badge/1476277757476868234?style=flat&a)
+![image](https://badges.fluxer.ltrx.lol/badge/1476277757476868234?style=flat)
 
 `https://badges.fluxer.ltrx.lol/badge/0000000000000000000?style=flat-square`
 
-![image](https://badges.fluxer.ltrx.lol/badge/1476277757476868234?style=flat-square&a)
+![image](https://badges.fluxer.ltrx.lol/badge/1476277757476868234?style=flat-square)
 
 `https://badges.fluxer.ltrx.lol/badge/0000000000000000000?style=plastic`
 
-![image](https://badges.fluxer.ltrx.lol/badge/1476277757476868234?style=plastic&a)
+![image](https://badges.fluxer.ltrx.lol/badge/1476277757476868234?style=plastic)
 
 `https://badges.fluxer.ltrx.lol/badge/0000000000000000000?style=social`
 
-![image](https://badges.fluxer.ltrx.lol/badge/1476277757476868234?style=social&a)
+![image](https://badges.fluxer.ltrx.lol/badge/1476277757476868234?style=social)
 
 `https://badges.fluxer.ltrx.lol/badge/0000000000000000000?style=for-the-badge`
 
-![image](https://badges.fluxer.ltrx.lol/badge/1476277757476868234?style=for-the-badge&a)
+![image](https://badges.fluxer.ltrx.lol/badge/1476277757476868234?style=for-the-badge)
 
 ## selfhost
 
