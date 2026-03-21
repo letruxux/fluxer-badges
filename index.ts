@@ -40,7 +40,7 @@ new Elysia()
         message: "community not found",
         style,
       });
-      return ResponseSvg(svg, 404);
+      return ResponseSvg(svg, 200);
     }
     const svg = makeBadge({
       label: guild.name,
