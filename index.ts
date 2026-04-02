@@ -28,6 +28,10 @@ client.on(Events.Error, (e) => {
   console.error("fluxerjs error", e);
 });
 
+client.on(Events.GuildCreate, (guild: Guild) => {
+  console.log(`new guild joined: ${guild.name}`);
+});
+
 new Elysia()
   .get("/badge/:id", async (c) => {
     const style: Style = styleSchema.parse(c.query.style ?? "flat");
@@ -56,6 +60,10 @@ new Elysia()
     return ResponseSvg(svg);
   })
   .onError(({ error }) => {
+    if ((error as any).code === "NOT_FOUND") {
+      return;
+    }
+
     console.error(error);
     return ResponseSvg(
       makeBadge({
